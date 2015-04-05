@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 
 public class Desk {
@@ -12,16 +11,7 @@ public class Desk {
 	
 	public void barajar() {
         
-		baraja = new ArrayList<Card>();
-        for (int i = 0; i < 52; i++) {
-            Card card;
-            do {
-                Random r = new Random();
-                card = new Card(r.nextInt(4), r.nextInt(13), true);
-            } while (baraja.contains(card));
-            baraja.add(card);
-        }
-       
+		baraja = CardsFactory.createCardList(52, true);
 	}
 	
 	public int numCards(){
