@@ -70,8 +70,8 @@ public class StartControllerTest {
 			barajas.add(startController.deskCards());
 		}
 		ArrayList<Card> barajaOriginal = barajas.get(0);
-		int comprobacion = 0;
 		for (int i = 0; i < 52; i++) {
+			int comprobacion = 0;
 			for (int j = 0; j < barajas.size(); j++) {
 				if (barajaOriginal.get(i).equals(barajas.get(j).get(i))) {
 					comprobacion++;
