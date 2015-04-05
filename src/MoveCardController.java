@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 
 public class MoveCardController {
     
@@ -20,6 +22,11 @@ public class MoveCardController {
     public int getWasteSize() {
         return 0;
     }
+
+	public ArrayList<Card> getWaste() {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
     
 

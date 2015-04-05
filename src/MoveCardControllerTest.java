@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 
@@ -22,7 +24,10 @@ public class MoveCardControllerTest {
         moveCardController1.moveFromDeckToWaste();
         assertEquals(deckSize-3,moveCardController.getDeckSize());
         assertEquals(wasteSize+3,moveCardController.getWasteSize());
-        
+        ArrayList<Card> waste = moveCardController1.getWaste();
+        for (Card card : waste) {
+			assertFalse(card.isCovered());
+		}
         
         
         

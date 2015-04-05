@@ -9,6 +9,10 @@ public class Desk {
 		this.barajar();
 	}
 	
+	public void barajar(int numero){
+		baraja = CardsFactory.createCardList(numero, true);
+	}
+	
 	public void barajar() {
         
 		baraja = CardsFactory.createCardList(52, true);
