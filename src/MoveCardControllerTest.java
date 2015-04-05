@@ -19,12 +19,12 @@ public class MoveCardControllerTest {
         int deckSize = moveCardController.getDeckSize();
         int wasteSize = moveCardController.getWasteSize();
         
-        moveCardController.moveFromDeckToWaste();
+        moveCardController1.moveFromDeckToWaste();
+        assertEquals(deckSize-3,moveCardController.getDeckSize());
+        assertEquals(wasteSize+3,moveCardController.getWasteSize());
         
-        if(deckSize > 3){
-        	assertEquals(deckSize-3,moveCardController.getDeckSize());
-        	assertEquals(wasteSize+3,moveCardController.getWasteSize());
-        }
+        
+        
         
        
        

@@ -20,6 +20,8 @@ public class MoveCardController {
     public int getWasteSize() {
         return 0;
     }
+    
+    
 
 
 }
