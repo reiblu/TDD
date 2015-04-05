@@ -25,11 +25,12 @@ public class StartControllerTest {
 	@Test
 	public void peeksEachTableauTest() {
 
+		startController.repartir();
 		ArrayList<Card> peeksEachTableau = startController.peeksEachTableau();
 		assertEquals(7, peeksEachTableau.size());
 		for (Card card : peeksEachTableau) {
 			assertNotNull(card);
-			assertTrue(card.uncovered());
+			assertFalse(card.isCovered());
 			int comprobacion = 0;
 			for (Card card1 : peeksEachTableau) {
 				if (card.equals(card1)) {
@@ -44,11 +45,12 @@ public class StartControllerTest {
 	@Test
 	public void checkDeskTest() {
 
+		startController.repartir();
 		ArrayList<Card> deskCards = startController.deskCards();
 		assertEquals(24, deskCards.size());
 		for (Card card : deskCards) {
 			assertNotNull(card);
-			assertTrue(card.covered());
+			assertTrue(card.isCovered());
 			int comprobacion = 0;
 			for (Card card1 : deskCards) {
 				if (card.equals(card1)) {
@@ -66,7 +68,7 @@ public class StartControllerTest {
 
 		List<ArrayList<Card>> barajas = new ArrayList<ArrayList<Card>>();
 		for (int i = 0; i < 10000; i++) {
-			startController.baraja();
+			startController.barajar();
 			barajas.add(startController.deskCards());
 		}
 		ArrayList<Card> barajaOriginal = barajas.get(0);
@@ -77,10 +79,9 @@ public class StartControllerTest {
 					comprobacion++;
 				}
 			}
-			assertTrue(comprobacion<(barajas.size()/40));
-			
+			assertTrue(comprobacion < (barajas.size() / 40));
+
 		}
-		
 
 	}
 

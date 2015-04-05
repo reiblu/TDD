@@ -3,14 +3,12 @@ public class Card {
     
     private int suit;
     private int number;
+    private boolean cover;
 
-    public Card(int suit, int number) {
+    public Card(int suit, int number, boolean cover) {
         this.suit = suit;
         this.number = number;
-    }
-
-    public boolean uncovered() {
-        return true;
+        this.cover = cover;
     }
     
     @Override
@@ -20,9 +18,8 @@ public class Card {
         return card.suit == suit && card.number == number;
     }
 
-	public boolean covered() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isCovered() {
+		return this.cover;
 	}
 
 }
