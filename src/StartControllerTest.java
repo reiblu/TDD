@@ -21,6 +21,13 @@ public class StartControllerTest {
 		assertTrue(startController.isEmptyAllFoundations());
 
 	}
+	
+	@Test
+	public void isEmptyWasteTest() {
+
+		assertTrue(startController.isEmptyWaste());
+
+	}
 
 	@Test
 	public void peeksEachTableauTest() {
@@ -40,6 +47,25 @@ public class StartControllerTest {
 			assertEquals(1, comprobacion);
 		}
 
+	}
+	
+	@Test
+	public void restEachTableauTest(){
+		startController.repartir();
+		ArrayList<Card> restEachTableau = startController.restEachTableau();
+		assertEquals(28, restEachTableau.size());
+		for (Card card : restEachTableau) {
+			assertNotNull(card);
+			assertTrue(card.isCovered());
+			int comprobacion = 0;
+			for (Card card1 : restEachTableau) {
+				if (card.equals(card1)) {
+					comprobacion++;
+				}
+			}
+			assertEquals(1, comprobacion);
+		}
+		
 	}
 
 	@Test

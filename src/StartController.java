@@ -35,4 +35,12 @@ public class StartController {
 		
 	}
 
+	public boolean isEmptyWaste() {
+		return true;
+	}
+
+	public ArrayList<Card> restEachTableau() {
+		return this.tab.getTableauRest();
+	}
+
 }
