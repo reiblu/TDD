@@ -29,4 +29,9 @@ public class StartController {
 		return null;
 	}
 
+	public void baraja() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -57,6 +58,30 @@ public class StartControllerTest {
 			assertEquals(1, comprobacion);
 
 		}
+
+	}
+
+	@Test
+	public void randomCards() {
+
+		List<ArrayList<Card>> barajas = new ArrayList<ArrayList<Card>>();
+		for (int i = 0; i < 50; i++) {
+			startController.baraja();
+			barajas.add(startController.deskCards());
+		}
+		ArrayList<Card> barajaOriginal = barajas.get(0);
+		int comprobacion = 0;
+		for (int i = 0; i < 52; i++) {
+			for (int j = 0; j < barajas.size(); j++) {
+				if (barajaOriginal.get(i).equals(barajas.get(j).get(i))) {
+					comprobacion++;
+				}
+			}
+			
+			assertTrue(comprobacion<(barajas.size()/52));
+			
+		}
+		
 
 	}
 
