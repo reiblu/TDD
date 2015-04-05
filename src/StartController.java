@@ -16,7 +16,7 @@ public class StartController {
             Card card;
             do {
                 Random r = new Random();
-                card = new Card(r.nextInt(3), r.nextInt(11));
+                card = new Card(r.nextInt(4), r.nextInt(13));
             } while (result.contains(card));
             result.add(card);
         }
@@ -25,8 +25,18 @@ public class StartController {
     }
 
 	public ArrayList<Card> deskCards() {
-		// TODO Auto-generated method stub
-		return null;
+		 ArrayList<Card> result = new ArrayList<Card>();
+	        
+	        for (int i = 0; i < 52; i++) {
+	            Card card;
+	            do {
+	                Random r = new Random();
+	                card = new Card(r.nextInt(4), r.nextInt(13));
+	            } while (result.contains(card));
+	            result.add(card);
+	        }
+	        
+	        return result;
 	}
 
 	public void baraja() {

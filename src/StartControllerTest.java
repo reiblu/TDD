@@ -65,7 +65,7 @@ public class StartControllerTest {
 	public void randomCards() {
 
 		List<ArrayList<Card>> barajas = new ArrayList<ArrayList<Card>>();
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 10000; i++) {
 			startController.baraja();
 			barajas.add(startController.deskCards());
 		}
@@ -77,8 +77,7 @@ public class StartControllerTest {
 					comprobacion++;
 				}
 			}
-			
-			assertTrue(comprobacion<(barajas.size()/52));
+			assertTrue(comprobacion<(barajas.size()/40));
 			
 		}
 		
