@@ -24,4 +24,9 @@ public class StartController {
         return result;
     }
 
+	public ArrayList<Card> deskCards() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

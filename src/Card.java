@@ -20,4 +20,9 @@ public class Card {
         return card.suit == suit && card.number == number;
     }
 
+	public boolean covered() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
