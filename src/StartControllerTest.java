@@ -53,7 +53,7 @@ public class StartControllerTest {
 	public void restEachTableauTest(){
 		startController.repartir();
 		ArrayList<Card> restEachTableau = startController.restEachTableau();
-		assertEquals(28, restEachTableau.size());
+		assertEquals(21, restEachTableau.size());
 		for (Card card : restEachTableau) {
 			assertNotNull(card);
 			assertTrue(card.isCovered());
