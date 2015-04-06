@@ -42,10 +42,12 @@ public class MoveCardControllerTest {
         
         this.baraja.barajar(2);
         this.waste.tener(0);
+        int deckSize2 = moveCardController.getDeckSize();
+        int wasteSize2 = moveCardController.getWasteSize();
         
         moveCardController2.moveFromDeckToWaste();
-        assertEquals(deckSize-2,moveCardController.getDeckSize());
-        assertEquals(wasteSize+2,moveCardController.getWasteSize());
+        assertEquals(deckSize2-2,moveCardController.getDeckSize());
+        assertEquals(wasteSize2+2,moveCardController.getWasteSize());
         ArrayList<Card> waste2 = moveCardController1.getWaste();
         for (Card card : waste2) {
 			assertFalse(card.isCovered());
@@ -53,10 +55,12 @@ public class MoveCardControllerTest {
         
         this.baraja.barajar(1);
         this.waste.tener(0);
+        int deckSize3 = moveCardController.getDeckSize();
+        int wasteSize3 = moveCardController.getWasteSize();
         
         moveCardController3.moveFromDeckToWaste();
-        assertEquals(deckSize-1,moveCardController.getDeckSize());
-        assertEquals(wasteSize+1,moveCardController.getWasteSize());
+        assertEquals(deckSize3-1,moveCardController.getDeckSize());
+        assertEquals(wasteSize3+1,moveCardController.getWasteSize());
         ArrayList<Card> waste3 = moveCardController1.getWaste();
         for (Card card : waste3) {
 			assertFalse(card.isCovered());
@@ -64,10 +68,12 @@ public class MoveCardControllerTest {
         
         this.baraja.barajar(0);
         this.waste.tener(9);
+        int deckSize4 = moveCardController.getDeckSize();
+        int wasteSize4 = moveCardController.getWasteSize();
         
         moveCardController4.moveFromDeckToWaste();
-        assertEquals(0,moveCardController.getDeckSize());
-        assertEquals(9,moveCardController.getWasteSize());
+        assertEquals(deckSize4,moveCardController.getDeckSize());
+        assertEquals(wasteSize4,moveCardController.getWasteSize());
         ArrayList<Card> waste4 = moveCardController1.getWaste();
         for (Card card : waste4) {
 			assertFalse(card.isCovered());

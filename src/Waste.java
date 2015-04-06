@@ -9,7 +9,7 @@ public class Waste {
 	}
 	
 	public void tener(int numero){
-		waste = CardsFactory.createCardList(numero, true);
+		waste = CardsFactory.createCardList(numero, false);
 	}
 	
 	public int numCards(){
