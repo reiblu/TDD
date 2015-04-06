@@ -28,6 +28,11 @@ public class MoveCardController {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public ArrayList<Card> getDeck() {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
     
 
