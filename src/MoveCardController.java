@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class MoveCardController {
     
+	private Desk baraja = new Desk();
     private int deckSize;
     private int wasteSize;
     
@@ -16,7 +17,7 @@ public class MoveCardController {
     }
 
     public int getDeckSize() {
-        return 0;
+        return baraja.numCards();
     }
 
     public int getWasteSize() {
