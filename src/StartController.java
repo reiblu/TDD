@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class StartController {
 	
-	private Desk baraja = new Desk();
+	private Deck baraja = new Deck();
 	private Tableau tab;
 
     public boolean isEmptyAllFoundations() {

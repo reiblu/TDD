@@ -3,35 +3,34 @@ import java.util.ArrayList;
 
 public class MoveCardController {
     
-	private Desk baraja = new Desk();
-    private int deckSize;
-    private int wasteSize;
+	private Deck baraja = new Deck();
+	private Waste waste = new Waste();
     
-    public MoveCardController(int deckSize, int wasteSize){
-        this.deckSize = deckSize;
-        this.wasteSize = wasteSize;
+    public MoveCardController(Deck baraja, Waste waste){
+        
     }
 
     public void moveFromDeckToWaste() {
         
+    	ArrayList<Card> moverCartas = this.baraja.moverCartas();
+    	this.waste.anadir(moverCartas);
+    	
     }
 
     public int getDeckSize() {
-        return baraja.numCards();
+        return this.baraja.numCards();
     }
 
     public int getWasteSize() {
-        return 0;
+        return this.waste.numCards();
     }
 
 	public ArrayList<Card> getWaste() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.baraja.getBaraja();
 	}
 
 	public ArrayList<Card> getDeck() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.waste.getWaste();
 	}
     
     
