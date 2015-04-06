@@ -85,8 +85,10 @@ public class MoveCardControllerTest {
     	this.moveCardController.setWaste(waste);
     	this.moveCardController.setFoundation(foundation);
     	
+    	this.waste.tener(4);
+    	
     	Card cardWaste = waste.getPeek();
-    	Card cardFoundation = foundation.getPeek();
+    	Card cardFoundation = foundation.getPeek(cardWaste.getSuit());
     	
     	assertTrue(cardFoundation.next(cardWaste));
     	moveCardController.moveFromWasteToFoundations();

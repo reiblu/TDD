@@ -5,6 +5,7 @@ public class MoveCardController {
     
 	private Deck baraja = new Deck();
 	private Waste waste = new Waste();
+	private Foundation foundation = new Foundation();
     
     public MoveCardController(){
         
@@ -39,6 +40,19 @@ public class MoveCardController {
 
 	public void setWaste(Waste waste2) {
 		this.waste = waste2;
+	}
+
+	public void setFoundation(Foundation foundation) {
+		this.foundation = foundation;
+	}
+
+	public void moveFromWasteToFoundations() {
+		
+		Card cardWaste = waste.getPeek();
+		if(foundation.canAdd(cardWaste)){
+			foundation.Add(cardWaste);
+		}
+		
 	}
     
     

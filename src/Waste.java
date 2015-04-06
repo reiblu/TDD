@@ -27,6 +27,11 @@ public class Waste {
 		waste.addAll(moverCartas);
 		
 	}
+
+	public Card getPeek() {
+		Card carta = waste.get(numCards()-1);
+		return carta;
+	}
 		
 	
 }

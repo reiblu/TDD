@@ -26,4 +26,16 @@ public class Card {
 		this.cover = false;
 	}
 
+	public int getSuit() {
+		return suit;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public boolean next(Card cardWaste) {
+		return this.number+1 == cardWaste.number;
+	}
+
 }
