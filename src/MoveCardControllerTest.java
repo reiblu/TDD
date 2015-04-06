@@ -85,15 +85,17 @@ public class MoveCardControllerTest {
     	this.moveCardController.setWaste(waste);
     	this.moveCardController.setFoundation(foundation);
     	
+    	ArrayList<Card> listaAux = new ArrayList<Card>();
+    	listaAux.add(new Card(3,1,false));
     	this.waste.tener(4);
+    	this.waste.anadir(listaAux);
     	
     	Card cardWaste = waste.getPeek();
     	Card cardFoundation = foundation.getPeek(cardWaste.getSuit());
-    	
+  
     	assertTrue(cardFoundation.next(cardWaste));
     	moveCardController.moveFromWasteToFoundations();
-    	
-    	
+    		
     }
 
 }
