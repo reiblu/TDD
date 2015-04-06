@@ -9,15 +9,14 @@ public class MoveCardControllerTest {
     
     private Deck baraja = new Deck();
 	private Waste waste = new Waste();
-	MoveCardController moveCardController = new MoveCardController(baraja,waste);
+	private Foundation foundation = new Foundation();
+	MoveCardController moveCardController = new MoveCardController();
 
     @Test
     public void moveFromDeckToWasteTest() {
      
-        MoveCardController moveCardController1 = new MoveCardController(baraja,waste);
-        MoveCardController moveCardController2 = new MoveCardController(baraja,waste);
-        MoveCardController moveCardController3 = new MoveCardController(baraja,waste);
-        MoveCardController moveCardController4 = new MoveCardController(baraja,waste);
+    	this.moveCardController.setDeck(baraja);
+    	this.moveCardController.setWaste(waste);
         
         this.baraja.barajar(52);
         this.waste.tener(0);
@@ -29,10 +28,10 @@ public class MoveCardControllerTest {
         for (int i = 0; i < 3; i++) {
 			aux.add(deck.get(i));
 		}
-        moveCardController1.moveFromDeckToWaste();
+        moveCardController.moveFromDeckToWaste();
         assertEquals(deckSize-3,moveCardController.getDeckSize());
         assertEquals(wasteSize+3,moveCardController.getWasteSize());
-        ArrayList<Card> waste = moveCardController1.getWaste();
+        ArrayList<Card> waste = moveCardController.getWaste();
         for (Card card : waste) {
 			assertFalse(card.isCovered());
 		}
@@ -45,10 +44,10 @@ public class MoveCardControllerTest {
         int deckSize2 = moveCardController.getDeckSize();
         int wasteSize2 = moveCardController.getWasteSize();
         
-        moveCardController2.moveFromDeckToWaste();
+        moveCardController.moveFromDeckToWaste();
         assertEquals(deckSize2-2,moveCardController.getDeckSize());
         assertEquals(wasteSize2+2,moveCardController.getWasteSize());
-        ArrayList<Card> waste2 = moveCardController1.getWaste();
+        ArrayList<Card> waste2 = moveCardController.getWaste();
         for (Card card : waste2) {
 			assertFalse(card.isCovered());
 		}
@@ -58,10 +57,10 @@ public class MoveCardControllerTest {
         int deckSize3 = moveCardController.getDeckSize();
         int wasteSize3 = moveCardController.getWasteSize();
         
-        moveCardController3.moveFromDeckToWaste();
+        moveCardController.moveFromDeckToWaste();
         assertEquals(deckSize3-1,moveCardController.getDeckSize());
         assertEquals(wasteSize3+1,moveCardController.getWasteSize());
-        ArrayList<Card> waste3 = moveCardController1.getWaste();
+        ArrayList<Card> waste3 = moveCardController.getWaste();
         for (Card card : waste3) {
 			assertFalse(card.isCovered());
 		}
@@ -71,14 +70,20 @@ public class MoveCardControllerTest {
         int deckSize4 = moveCardController.getDeckSize();
         int wasteSize4 = moveCardController.getWasteSize();
         
-        moveCardController4.moveFromDeckToWaste();
+        moveCardController.moveFromDeckToWaste();
         assertEquals(deckSize4,moveCardController.getDeckSize());
         assertEquals(wasteSize4,moveCardController.getWasteSize());
-        ArrayList<Card> waste4 = moveCardController1.getWaste();
+        ArrayList<Card> waste4 = moveCardController.getWaste();
         for (Card card : waste4) {
 			assertFalse(card.isCovered());
 		}
        
+    }
+    
+    @Test
+    public void moveFromWasteToFoundations(){
+    	this.moveCardController.setWaste(waste);
+    	this.moveCardController.setFoundation(foundation);
     }
 
 }
