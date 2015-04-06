@@ -7,7 +7,8 @@ public class MoveCardController {
 	private Waste waste = new Waste();
     
     public MoveCardController(Deck baraja, Waste waste){
-        
+        this.baraja = baraja;
+        this.waste = waste;
     }
 
     public void moveFromDeckToWaste() {
@@ -26,11 +27,11 @@ public class MoveCardController {
     }
 
 	public ArrayList<Card> getWaste() {
-		return this.baraja.getBaraja();
+		return this.waste.getWaste();
 	}
 
 	public ArrayList<Card> getDeck() {
-		return this.waste.getWaste();
+		return this.baraja.getBaraja();
 	}
     
     

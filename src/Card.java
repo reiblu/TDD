@@ -21,5 +21,9 @@ public class Card {
 	public boolean isCovered() {
 		return this.cover;
 	}
+	
+	public void unCovered(){
+		this.cover = false;
+	}
 
 }

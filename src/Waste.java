@@ -19,6 +19,14 @@ public class Waste {
 	public ArrayList<Card> getWaste() {
 		return waste;
 	}
+
+	public void anadir(ArrayList<Card> moverCartas) {
+		for (Card card : moverCartas) {
+			card.unCovered();
+		}
+		waste.addAll(moverCartas);
+		
+	}
 		
 	
 }

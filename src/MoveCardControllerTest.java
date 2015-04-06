@@ -7,9 +7,9 @@ import org.junit.Test;
 
 public class MoveCardControllerTest {
     
-    MoveCardController moveCardController;
     private Deck baraja = new Deck();
 	private Waste waste = new Waste();
+	MoveCardController moveCardController = new MoveCardController(baraja,waste);
 
     @Test
     public void moveFromDeckToWasteTest() {

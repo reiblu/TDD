@@ -47,7 +47,8 @@ public class Deck {
 	public ArrayList<Card> dameCartas(int numCartas){
 		ArrayList<Card> listaCartas = new ArrayList<Card>();
 		for (int j = 0; j < numCartas; j++) {
-			listaCartas.add(this.baraja.get(j));
+			listaCartas.add(this.baraja.get(0));
+			this.baraja.remove(0);
 		}
 		return listaCartas;
 	}
