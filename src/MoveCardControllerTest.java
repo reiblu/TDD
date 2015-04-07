@@ -100,7 +100,22 @@ public class MoveCardControllerTest {
     
     @Test
     public void moveFromWasteToDeckTest(){
+        this.moveCardController.setDeck(baraja);
+        this.moveCardController.setWaste(waste);
         
+        this.baraja.barajar(0);
+        this.waste.tener(7);
+        ArrayList<Card> listaMover = waste.getWaste();
+        assertTrue(baraja.isEmpty());
+        assertFalse(waste.isEmpty());
+        moveCardController.moveFromWasteToDeck();
+        ArrayList<Card> listaMovida = baraja.getBaraja();
+        for (Card card : listaMovida) {
+            assertTrue(card.isCovered());
+        }
+        for (int i = 0; i < listaMovida.size(); i++) {
+            assertEquals(listaMover.get(i),listaMovida.get(i));
+        }
     }
 
 }
