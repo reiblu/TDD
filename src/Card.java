@@ -25,6 +25,10 @@ public class Card {
 	public void unCovered(){
 		this.cover = false;
 	}
+	
+	public void covered(){
+	    this.cover = true;
+	}
 
 	public int getSuit() {
 		return suit;

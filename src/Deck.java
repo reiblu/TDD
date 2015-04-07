@@ -58,6 +58,9 @@ public class Deck {
     }
 
     public void moveFromWaste(ArrayList<Card> listaMover) {
+        for (Card card : listaMover) {
+            card.covered();
+        }
         for (int i = 0; i < listaMover.size(); i++) {
             this.baraja.add(listaMover.get(i));
         }
