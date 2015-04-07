@@ -53,4 +53,8 @@ public class Deck {
 		return listaCartas;
 	}
 
+    public boolean isEmpty() {
+        return this.baraja.size() == 0;
+    }
+
 }

@@ -54,6 +54,12 @@ public class MoveCardController {
 		}
 		
 	}
+
+    public void moveFromWasteToDeck() {
+        ArrayList<Card> listaMover = this.waste.getWaste();
+        this.baraja.moveFromWaste(listaMover);
+        
+    }
     
     
 

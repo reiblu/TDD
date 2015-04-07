@@ -32,6 +32,10 @@ public class Waste {
 		Card carta = waste.get(numCards()-1);
 		return carta;
 	}
+
+    public boolean isEmpty() {
+        return this.waste.size() == 0;
+    }
 		
 	
 }
