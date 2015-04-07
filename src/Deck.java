@@ -57,4 +57,11 @@ public class Deck {
         return this.baraja.size() == 0;
     }
 
+    public void moveFromWaste(ArrayList<Card> listaMover) {
+        for (int i = 0; i < listaMover.size(); i++) {
+            this.baraja.add(listaMover.get(i));
+        }
+        
+    }
+
 }
