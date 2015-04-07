@@ -97,5 +97,10 @@ public class MoveCardControllerTest {
     	moveCardController.moveFromWasteToFoundations();
     		
     }
+    
+    @Test
+    public void moveFromWasteToDeckTest(){
+        
+    }
 
 }

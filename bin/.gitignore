@@ -1,11 +1,10 @@
 /Card.class
+/CardsFactory.class
+/Deck.class
+/Foundation.class
 /MoveCardController.class
 /MoveCardControllerTest.class
 /StartController.class
 /StartControllerTest.class
-/Desk.class
-/Waste.class
 /Tableau.class
-/CardsFactory.class
-/Deck.class
-/Foundation.class
+/Waste.class
